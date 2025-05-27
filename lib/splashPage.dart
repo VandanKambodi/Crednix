@@ -1,3 +1,4 @@
+import 'package:crednix/Home/homePage.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 
@@ -31,7 +32,7 @@ class SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     Future.delayed(Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => homePage()),
       );
     });
   }
@@ -48,7 +49,6 @@ class SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       backgroundColor: Color(0xFF0B4D3C),
       body: Stack(
         children: [
-
           // Positioned(
           //   top: -100,
           //   right: -100,
@@ -68,7 +68,6 @@ class SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           //     height: 300,
           //   ),
           // ),
-
           Center(
             child: FadeTransition(
               opacity: _opacityAnimation,
@@ -100,7 +99,6 @@ class SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           ),
         ],
       ),
-
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:crednix/SplashPage.dart';
+import 'package:crednix/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
