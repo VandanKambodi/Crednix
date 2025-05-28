@@ -1,4 +1,5 @@
 import 'package:crednix/Home/homePage.dart';
+import 'package:crednix/Settings/settingPage.dart';
 import 'package:flutter/material.dart';
 
 class payNotification extends StatefulWidget {
@@ -74,17 +75,30 @@ class _payNotificationState extends State<payNotification> {
                             ),
                           ],
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white30, width: 1),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.settings,
-                              size: 25,
-                              color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => settingPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.white30,
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(
+                                Icons.settings,
+                                size: 25,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

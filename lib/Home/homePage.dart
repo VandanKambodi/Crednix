@@ -1,4 +1,5 @@
 import 'package:crednix/Notifications/payNotification.dart';
+import 'package:crednix/Settings/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -45,20 +46,30 @@ class _homePageState extends State<homePage> {
                             ),
                           ],
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: Colors.grey.shade300,
-                              width: 2,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => settingPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.grey.shade300,
+                                width: 2,
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.settings,
-                              size: 25,
-                              color: Colors.grey.shade800,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(
+                                Icons.settings,
+                                size: 25,
+                                color: Colors.grey.shade800,
+                              ),
                             ),
                           ),
                         ),
