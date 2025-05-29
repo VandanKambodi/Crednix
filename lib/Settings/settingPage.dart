@@ -227,7 +227,7 @@ class _settingPageState extends State<settingPage> {
                   color: Colors.grey.shade400,
                   thickness: 0.5,
                   indent: 0,
-                  endIndent: 20,
+                  endIndent: 0,
                 ),
               ),
               SizedBox(height: 5),

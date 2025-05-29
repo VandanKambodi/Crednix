@@ -452,7 +452,11 @@ class _chartPageState extends State<chartPage> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Center(
-                      child: Image.asset("assets/Images/starbucks.png",height: 40,width: 40,),
+                      child: Image.asset(
+                        "assets/Images/starbucks.png",
+                        height: 40,
+                        width: 40,
+                      ),
                     ),
                   ),
                   title: Text(
@@ -492,7 +496,11 @@ class _chartPageState extends State<chartPage> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Center(
-                      child: Image.asset("assets/Images/netflix.png",height: 50,width: 50,),
+                      child: Image.asset(
+                        "assets/Images/netflix.png",
+                        height: 50,
+                        width: 50,
+                      ),
                     ),
                   ),
                   title: Text(
@@ -523,7 +531,6 @@ class _chartPageState extends State<chartPage> {
                   ),
                 ),
                 Divider(thickness: 0.5, indent: 5, endIndent: 5),
-
               ],
             ),
           ),
@@ -621,8 +628,15 @@ class _chartPageState extends State<chartPage> {
       children: [
         Icon(Icons.circle, size: 8, color: color),
         SizedBox(width: 4),
-        Text(label, style: TextStyle(color: color, fontSize: 11,fontWeight: FontWeight.bold,
-          fontFamily: 'description',)),
+        Text(
+          label,
+          style: TextStyle(
+            color: color,
+            fontSize: 11,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'description',
+          ),
+        ),
       ],
     );
   }

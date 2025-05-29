@@ -62,7 +62,7 @@ class _homePageState extends State<homePage> {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 color: Colors.grey.shade300,
-                                width: 2,
+                                width: 1,
                               ),
                             ),
                             child: Padding(
