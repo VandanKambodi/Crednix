@@ -1,4 +1,5 @@
 import 'package:crednix/Notifications/payNotification.dart';
+import 'package:crednix/Profile/profilePage.dart';
 import 'package:crednix/Settings/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -26,7 +27,7 @@ class _homePageState extends State<homePage> {
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(
-                      left: 20.0,
+                      left: 14.0,
                       right: 20.0,
                       top: 40.0,
                       bottom: 10.0,
@@ -723,7 +724,12 @@ class _homePageState extends State<homePage> {
                       size: 27,
                       color: Colors.grey.shade800,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => profilePage()),
+                      );
+                    },
                   ),
                 ],
               ),
