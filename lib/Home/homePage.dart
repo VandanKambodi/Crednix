@@ -1,3 +1,4 @@
+import 'package:crednix/Chart/chartPage.dart';
 import 'package:crednix/Notifications/payNotification.dart';
 import 'package:crednix/Profile/profilePage.dart';
 import 'package:crednix/Settings/settingPage.dart';
@@ -694,7 +695,12 @@ class _homePageState extends State<homePage> {
                       size: 27,
                       color: Colors.grey.shade800,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => chartPage()),
+                      );
+                    },
                   ),
                 ],
               ),
