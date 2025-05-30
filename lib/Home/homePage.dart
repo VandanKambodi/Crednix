@@ -1,7 +1,10 @@
 import 'package:crednix/Chart/chartPage.dart';
 import 'package:crednix/Notifications/payNotification.dart';
 import 'package:crednix/Profile/profilePage.dart';
+import 'package:crednix/Scan/summaryPage.dart';
 import 'package:crednix/Settings/settingPage.dart';
+import 'package:crednix/Scan//scanQR_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -661,7 +664,12 @@ class _homePageState extends State<homePage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ScanQRPage()),
+          );
+        },
         backgroundColor: Color(0xFFFFA726),
         shape: CircleBorder(),
         foregroundColor: Colors.orange,

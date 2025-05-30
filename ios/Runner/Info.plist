@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSCameraUsageDescription</key>
+    <string>This app uses the camera to scan QR codes for payments.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Crednix</string>
 	<key>CFBundleExecutable</key>
