@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-class monthlyPage extends StatefulWidget{
+class monthlyPage extends StatefulWidget {
   @override
   State<monthlyPage> createState() => _monthlyPageState();
 }
@@ -24,8 +23,8 @@ class _monthlyPageState extends State<monthlyPage> {
         child: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor:
-          Colors
-              .transparent, // Make AppBar transparent to show your custom background
+              Colors
+                  .transparent, // Make AppBar transparent to show your custom background
           elevation: 0,
           flexibleSpace: Container(
             color: Colors.white,
@@ -127,12 +126,12 @@ class _monthlyPageState extends State<monthlyPage> {
             padding: EdgeInsets.all(16),
             child: Column(
               children: [
-
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                    color: Color(0xFF0B4D3C),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Colors.grey.shade300),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 18.0, right: 18.0),
@@ -141,22 +140,30 @@ class _monthlyPageState extends State<monthlyPage> {
                       children: [
                         Row(
                           children: [
-                            Icon(Icons.arrow_drop_down),
+                            CircleAvatar(
+                              backgroundColor: Colors.green.withOpacity(0.2),
+                              child: Icon(
+                                Icons.arrow_drop_down,
+                                color: Colors.green,
+                                size: 35,
+                              ),
+                            ),
+                            SizedBox(width: 16),
                             Column(
                               children: [
                                 Text(
                                   '\$5,440',
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontFamily: 'pageHeads',
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontFamily: 'pageHead',
                                   ),
                                 ),
-                                SizedBox(height: 8),
+                                SizedBox(height: 4),
                                 Text(
                                   'Income',
                                   style: TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.grey,
                                     fontFamily: 'pageHead',
                                     fontSize: 12,
                                   ),
@@ -168,26 +175,39 @@ class _monthlyPageState extends State<monthlyPage> {
                         Container(
                           height: 40,
                           width: 1,
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.grey.withOpacity(0.3),
                         ),
-                        Column(
+                        Row(
                           children: [
-                            Text(
-                              '\$2,209',
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontFamily: 'pageHeads',
+                            CircleAvatar(
+                              backgroundColor: Colors.orange.withOpacity(0.2),
+                              child: Icon(
+                                Icons.arrow_drop_up,
+                                color: Colors.orange,
+                                size: 35,
                               ),
                             ),
-                            SizedBox(height: 8),
-                            Text(
-                              'Expense',
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontFamily: 'pageHead',
-                                fontSize: 12,
-                              ),
+                            SizedBox(width: 16),
+                            Column(
+                              children: [
+                                Text(
+                                  '\$2,209',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontFamily: 'pageHead',
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  'Expense',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontFamily: 'pageHead',
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -196,74 +216,70 @@ class _monthlyPageState extends State<monthlyPage> {
                   ),
                 ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildStatCard(
-                        icon: Icons.arrow_drop_down,
-                        color: Colors.green,
-                        label: "Income",
-                        amount: "\$5,440"),
-                    _buildStatCard(
-                        icon: Icons.arrow_drop_up,
-                        color: Colors.orange,
-                        label: "Expense",
-                        amount: "\$2,209"),
-                  ],
-                ),
                 SizedBox(height: 24),
 
-                // Statistic Title and Dropdown
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Statistic Overview",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontFamily: 'pageHead',
+                            ),
                           ),
                           SizedBox(height: 4),
                           Text(
                             "Nov 1, 2020 – Nov 30, 2020",
-                            style: TextStyle(color: Colors.grey),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey.shade600,
+                              fontFamily: 'description',
+                            ),
                           ),
-                        ]),
-                    DropdownButton<String> (
-                      value: 'Monthly',
-                      borderRadius: BorderRadius.circular(10),
-                      focusColor: Colors.white,
-                      dropdownColor: Colors.white,
-                      items:
-                      ['Weekly', 'Monthly']
-                          .map(
-                            (e) => DropdownMenuItem(
-                          value: e,
-                          child: Text(e),
-                        ),
-                      )
-                          .toList(),
-                      style: TextStyle(
-                        fontFamily: 'pageHead',
-                        color: Colors.black,
+                        ],
                       ),
-                      onChanged: (_) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => chartPage()),
-                        );
-                      },
-                    ),
-                  ],
+                      DropdownButton<String>(
+                        value: 'Monthly',
+                        borderRadius: BorderRadius.circular(10),
+                        focusColor: Colors.white,
+                        dropdownColor: Colors.white,
+                        items:
+                            ['Weekly', 'Monthly']
+                                .map(
+                                  (e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Text(e),
+                                  ),
+                                )
+                                .toList(),
+                        style: TextStyle(
+                          fontFamily: 'pageHead',
+                          color: Colors.black,
+                        ),
+                        onChanged: (_) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => chartPage(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 40),
 
                 SizedBox(height: 250, child: _buildBarChart()),
 
-
-                SizedBox(height: 25),
+                SizedBox(height: 30),
 
                 Align(
                   alignment: Alignment.centerLeft,
@@ -543,6 +559,7 @@ class _monthlyPageState extends State<monthlyPage> {
       ),
     );
   }
+
   Widget _buildLegendDot(Color color, String label) {
     return Row(
       children: [
@@ -561,65 +578,42 @@ class _monthlyPageState extends State<monthlyPage> {
     );
   }
 
-  Widget _buildStatCard({
-    required IconData icon,
-    required Color color,
-    required String label,
-    required String amount,
-  }) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 6),
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.grey.shade200),
-        ),
-        child: Row(
-          children: [
-            CircleAvatar(
-              backgroundColor: color.withOpacity(0.2),
-              child: Icon(icon, color: color),
-            ),
-            SizedBox(width: 12),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(amount,
-                    style: TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold,color: Colors.black,
-                      fontFamily: 'pageHead',
-                      )),
-                Text(label, style: TextStyle(color: Colors.grey)),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _buildBarChart() {
     return BarChart(
       BarChartData(
         titlesData: FlTitlesData(
           bottomTitles: AxisTitles(
-              sideTitles: SideTitles(
-                  showTitles: true,
-                  getTitlesWidget: (value, meta) {
-                    const weeks = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-                    return Text(weeks[value.toInt()]);
-                  })),
+            sideTitles: SideTitles(
+              showTitles: true,
+              getTitlesWidget: (value, meta) {
+                const weeks = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+                return Text(
+                  weeks[value.toInt()],
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'description',
+                    fontSize: 12,
+                  ),
+                );
+              },
+            ),
+          ),
           leftTitles: AxisTitles(
-              sideTitles: SideTitles(
-                showTitles: true,
-                getTitlesWidget: (value, meta) {
-                  return Text('\$${value ~/ 1000}k');
-                },
-              )),
-          rightTitles:
-          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            sideTitles: SideTitles(
+              showTitles: true,
+              getTitlesWidget: (value, meta) {
+                return Text(
+                  '\$${value ~/ 1000}k',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'description',
+                    color: Colors.grey,
+                  ),
+                );
+              },
+            ),
+          ),
+          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
           topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
         ),
         barGroups: [
@@ -628,7 +622,7 @@ class _monthlyPageState extends State<monthlyPage> {
           _makeGroup(2, 2500, 1700),
           _makeGroup(3, 4000, 600),
         ],
-        gridData: FlGridData(show: true),
+        gridData: FlGridData(drawHorizontalLine: true, drawVerticalLine: false),
         borderData: FlBorderData(show: false),
         barTouchData: BarTouchData(enabled: false),
       ),
@@ -636,17 +630,22 @@ class _monthlyPageState extends State<monthlyPage> {
   }
 
   BarChartGroupData _makeGroup(int x, double income, double expense) {
-    return BarChartGroupData(x: x, barRods: [
-      BarChartRodData(
+    return BarChartGroupData(
+      x: x,
+      barRods: [
+        BarChartRodData(
           toY: income,
           color: Colors.green,
-          width: 8,
-          borderRadius: BorderRadius.circular(4)),
-      BarChartRodData(
+          width: 18,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        BarChartRodData(
           toY: expense,
           color: Colors.orange,
-          width: 8,
-          borderRadius: BorderRadius.circular(4)),
-    ]);
+          width: 18,
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ],
+    );
   }
 }

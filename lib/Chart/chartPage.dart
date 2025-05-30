@@ -153,7 +153,7 @@ class _chartPageState extends State<chartPage> {
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
-                                fontFamily: 'pageHeads',
+                                fontFamily: 'pageHead',
                               ),
                             ),
                           ],
@@ -179,7 +179,7 @@ class _chartPageState extends State<chartPage> {
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
-                                fontFamily: 'pageHeads',
+                                fontFamily: 'pageHead',
                               ),
                             ),
                           ],
@@ -216,7 +216,9 @@ class _chartPageState extends State<chartPage> {
                         onChanged: (_) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => monthlyPage()),
+                            MaterialPageRoute(
+                              builder: (context) => monthlyPage(),
+                            ),
                           );
                         },
                       ),
@@ -274,7 +276,14 @@ class _chartPageState extends State<chartPage> {
                                 'Sat',
                                 'Sun',
                               ];
-                              return Text(days[value.toInt()]);
+                              return Text(
+                                days[value.toInt()],
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'description',
+                                  color: Colors.grey,
+                                ),
+                              );
                             },
                             reservedSize: 28,
                           ),
