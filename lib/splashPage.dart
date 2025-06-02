@@ -49,25 +49,27 @@ class SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       backgroundColor: Color(0xFF0B4D3C),
       body: Stack(
         children: [
-          // Positioned(
-          //   top: -100,
-          //   right: -100,
-          //   child: Image.asset(
-          //     'assets/Images/ssBack.png',
-          //     width: 300,
-          //     height: 300,
-          //   ),
-          // ),
-          //
-          // Positioned(
-          //   bottom: -100,
-          //   left: -100,
-          //   child: Image.asset(
-          //     'assets/Images/ssBack.png',
-          //     width: 300,
-          //     height: 300,
-          //   ),
-          // ),
+          Positioned(
+            top: -200,
+            right: -250,
+            child: Image.asset(
+              'assets/Images/ssBack2.png',
+              width: 700,
+              height: 700,
+              color: Colors.green.shade50,
+            ),
+          ),
+
+          Positioned(
+            bottom: -80,
+            left: -60,
+            child: Image.asset(
+              'assets/Images/ssBack1.png',
+              width: 300,
+              height: 300,
+              color: Colors.green.shade50,
+            ),
+          ),
           Center(
             child: FadeTransition(
               opacity: _opacityAnimation,
