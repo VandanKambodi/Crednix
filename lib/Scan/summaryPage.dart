@@ -1,4 +1,5 @@
 import 'package:crednix/Home/homePage.dart';
+import 'package:crednix/Scan/scanQR_page.dart';
 import 'package:crednix/Settings/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'confirmPassword_Page.dart';
@@ -37,7 +38,7 @@ class SummaryPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => homePage(),
+                                builder: (context) => ScanQRPage(),
                               ),
                             );
                           },

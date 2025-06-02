@@ -2,6 +2,7 @@ import 'package:crednix/Chart/chartPage.dart';
 import 'package:crednix/Home/homePage.dart';
 import 'package:crednix/Notifications/payNotification.dart';
 import 'package:crednix/Profile/profilePage.dart';
+import 'package:crednix/Scan/scanQR_page.dart';
 import 'package:crednix/Settings/settingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -236,7 +237,7 @@ class _monthlyPageState extends State<monthlyPage> {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            "Nov 1, 2020 – Nov 30, 2020",
+                            "April 1, 2025 – April 30, 2025",
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.grey.shade600,
@@ -405,7 +406,7 @@ class _monthlyPageState extends State<monthlyPage> {
                     ),
                   ),
                   subtitle: Text(
-                    "Dec 2, 2020  •  3:09 PM",
+                    "May 2, 2025  •  3:09 PM",
 
                     style: TextStyle(
                       color: Colors.grey.shade600,
@@ -449,7 +450,7 @@ class _monthlyPageState extends State<monthlyPage> {
                     ),
                   ),
                   subtitle: Text(
-                    "Dec 11, 2020  •  10:49 AM",
+                    "May 11, 2025  •  10:49 AM",
 
                     style: TextStyle(
                       color: Colors.grey.shade600,
@@ -475,7 +476,12 @@ class _monthlyPageState extends State<monthlyPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ScanQRPage()),
+          );
+        },
         backgroundColor: Color(0xFFFFA726),
         shape: CircleBorder(),
         foregroundColor: Colors.orange,
