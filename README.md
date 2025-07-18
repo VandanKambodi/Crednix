@@ -13,6 +13,7 @@ https://drive.google.com/file/d/1K8Mh626xdnrcqpA5iJPZyFSimm5XhheS/view?usp=shari
 - Credit card-style UI for financial tracking or account previews
 - Fully responsive Flutter layouts
 - Custom UI components and styling
+- QR scanning and redirect to other page
 - Navigation-ready layout (multiple screens/widgets)
 
 
